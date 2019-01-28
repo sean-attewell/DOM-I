@@ -41,6 +41,8 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
+// ====== Update the HTML with the JSON data ======
+
 let headImg = document.getElementById("cta-img");
 headImg.setAttribute('src', siteContent["cta"]["img-src"]);
 
@@ -49,7 +51,6 @@ midPageAccent.src = siteContent["main-content"]["middle-img-src"]
 
 
 const anchors = document.querySelectorAll('a');
-//anchors.forEach(element => element.textContent = siteContent["nav"][0])
 anchors[0].textContent = siteContent["nav"]["nav-item-1"];
 anchors[1].textContent = siteContent["nav"]["nav-item-2"];
 anchors[2].textContent = siteContent["nav"]["nav-item-3"];
@@ -93,3 +94,20 @@ contactArr[2].textContent = siteContent.contact.email;
 
 const footerInfo = document.querySelector('footer');
 footerInfo.textContent = siteContent.footer.copyright;
+
+// ====== Add new content ======
+
+anchors.forEach(element => element.style.color = 'green');
+
+const navElement = document.querySelector('nav')
+
+const newLink = document.createElement('a');
+newLink.innerText = 'Last!'; 
+newLink.href = 'http://google.com';
+navElement.appendChild(newLink); 
+
+
+const newLink2 = document.createElement('a');
+newLink2.innerHTML = '<a>First!</a>';
+newLink2.href = 'https://duckduckgo.com/'
+navElement.prepend(newLink2);
