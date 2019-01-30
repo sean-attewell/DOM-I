@@ -39,4 +39,75 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+// ====== Update the HTML with the JSON data ======
+
+let headImg = document.getElementById("cta-img");
+headImg.setAttribute('src', siteContent["cta"]["img-src"]);
+
+let midPageAccent = document.getElementById("middle-img");
+midPageAccent.src = siteContent["main-content"]["middle-img-src"]
+
+
+const anchors = document.querySelectorAll('a');
+anchors[0].textContent = siteContent["nav"]["nav-item-1"];
+anchors[1].textContent = siteContent["nav"]["nav-item-2"];
+anchors[2].textContent = siteContent["nav"]["nav-item-3"];
+anchors[3].textContent = siteContent["nav"]["nav-item-4"];
+anchors[4].textContent = siteContent["nav"]["nav-item-5"];
+anchors[5].textContent = siteContent["nav"]["nav-item-6"];
+
+const mainHeader = document.querySelector('h1');
+mainHeader.textContent = siteContent["cta"]["h1"];
+
+const onlyButton = document.querySelector('button');
+onlyButton.textContent = siteContent["cta"]["button"];
+
+const topContentTitles = document.querySelectorAll('.top-content .text-content h4');
+topContentTitles[0].textContent = siteContent["main-content"]["features-h4"];
+topContentTitles[1].textContent = siteContent["main-content"]["about-h4"];
+
+const topContentBody = document.querySelectorAll('.top-content .text-content p');
+topContentBody[0].textContent = siteContent["main-content"]["features-content"];
+topContentBody[1].textContent = siteContent["main-content"]["about-content"];
+
+const bottonContentTitles = document.querySelectorAll('.bottom-content .text-content h4');
+bottonContentTitles[0].textContent = siteContent["main-content"]["services-h4"];
+bottonContentTitles[1].textContent = siteContent["main-content"]["product-h4"];
+bottonContentTitles[2].textContent = siteContent["main-content"]["vision-h4"];
+
+const bottomContentBody = document.querySelectorAll('.bottom-content .text-content p');
+bottomContentBody[0].textContent = siteContent["main-content"]["services-content"];
+bottomContentBody[1].textContent = siteContent["main-content"]["product-content"];
+bottomContentBody[2].textContent = siteContent["main-content"]["vision-content"];
+
+const contactHead = document.querySelector('.contact h4');
+contactHead.textContent = siteContent.contact["contact-h4"];
+
+const contactInfo = document.querySelectorAll('.contact p');
+contactArr = Array.from(contactInfo)
+
+contactArr[0].textContent = siteContent.contact.address;
+contactArr[1].textContent = siteContent.contact.phone;
+contactArr[2].textContent = siteContent.contact.email;
+
+const footerInfo = document.querySelector('footer');
+footerInfo.textContent = siteContent.footer.copyright;
+
+// ====== Add new content ======
+
+anchors.forEach(element => element.style.color = 'green');
+
+const navElement = document.querySelector('nav')
+
+const newLink = document.createElement('a');
+newLink.innerText = 'Last!'; 
+newLink.href = 'http://google.com';
+navElement.appendChild(newLink); 
+
+
+const newLink2 = document.createElement('a');
+newLink2.innerHTML = '<a>First!</a>';
+newLink2.href = 'https://duckduckgo.com/'
+navElement.prepend(newLink2);
